@@ -22,41 +22,37 @@
       overflow-x: hidden;
     }
 
-    /* Language switcher */
+    /* Lang Switcher */
     .lang-switcher {
       position: fixed;
       top: 1.5rem;
       right: 1.5rem;
-      z-index: 100;
+      z-index: 200;
       display: flex;
-      gap: 2px;
-      background: rgba(0,0,0,0.25);
-      border: 1px solid rgba(255,255,255,0.2);
+      gap: 4px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 100px;
       padding: 4px;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
     }
 
     .lang-btn {
-      padding: 6px 16px;
+      padding: 6px 18px;
       border: none;
       border-radius: 100px;
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.25s;
       background: transparent;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.55);
       letter-spacing: 1px;
     }
 
     .lang-btn.active {
       background: #fff;
       color: var(--primary);
-    }
-
-    .lang-btn:hover:not(.active) {
-      color: #fff;
     }
 
     /* Hero */
@@ -69,7 +65,7 @@
       text-align: center;
       padding: 2rem;
       position: relative;
-      background: linear-gradient(135deg, #001f5c 0%, #003da5 50%, #0055b3 100%);
+      background: linear-gradient(135deg, #001f5c 0%, #003da5 55%, #0055b3 100%);
       overflow: hidden;
     }
 
@@ -78,7 +74,7 @@
       position: absolute;
       inset: 0;
       background: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80') center/cover no-repeat;
-      opacity: 0.15;
+      opacity: 0.12;
     }
 
     .hero::after {
@@ -93,28 +89,27 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      animation: fadeUp 1s ease-out;
     }
 
     .hero-badge {
       display: inline-block;
-      padding: 6px 20px;
-      border: 2px solid rgba(255,255,255,0.5);
+      padding: 5px 20px;
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
       border-radius: 100px;
-      color: rgba(255,255,255,0.9);
-      font-size: 0.85rem;
-      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.8rem;
+      letter-spacing: 4px;
       text-transform: uppercase;
       margin-bottom: 2rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      font-weight: 800;
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 900;
       color: #fff;
-      line-height: 1.1;
+      line-height: 1.0;
       margin-bottom: 1.5rem;
-      letter-spacing: -1px;
+      letter-spacing: -2px;
     }
 
     .hero h1 em {
@@ -122,18 +117,19 @@
       font-style: normal;
     }
 
-    .hero .date-line {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 0.5rem;
+    .hero .date-tag {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
     }
 
-    .hero .subtitle {
+    .hero .tagline {
       font-size: 1.2rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.55);
       max-width: 480px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
+      margin: 0 auto 3.5rem;
+      line-height: 1.8;
     }
 
     .hero-cta {
@@ -143,18 +139,16 @@
       padding: 14px 36px;
       background: var(--accent);
       color: #fff;
-      border: none;
       border-radius: 100px;
       font-size: 1rem;
       font-weight: 600;
-      cursor: pointer;
       text-decoration: none;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .hero-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(232, 119, 46, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(232, 119, 46, 0.45);
     }
 
     .scroll-hint {
@@ -162,126 +156,179 @@
       bottom: 140px;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(255,255,255,0.5);
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
       z-index: 2;
-      animation: bounce 2s infinite;
+      animation: bounce 2.5s ease-in-out infinite;
     }
 
     /* Sections */
     section {
-      padding: 6rem 2rem;
-      max-width: 860px;
+      padding: 7rem 2rem;
+      max-width: 820px;
       margin: 0 auto;
     }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 1rem;
     }
 
     .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
       color: var(--primary);
       line-height: 1.2;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .section-body {
-      font-size: 1.1rem;
-      line-height: 1.9;
+      font-size: 1.08rem;
+      line-height: 2;
       color: #4a5568;
+    }
+
+    .section-body p + p {
+      margin-top: 1.2rem;
+    }
+
+    .section-body strong {
+      color: var(--primary);
     }
 
     /* Divider */
     .divider {
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--primary), transparent);
-      opacity: 0.15;
-      max-width: 860px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(0,61,165,0.15), transparent);
+      max-width: 820px;
       margin: 0 auto;
     }
 
-    /* Story section */
-    .story-section {
+    /* Origin section */
+    .origin-section {
       background: #fff;
     }
 
-    .story-grid {
+    .origin-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-top: 3rem;
-      align-items: center;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 2.5rem;
     }
 
-    .story-img {
+    .origin-img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 3/4;
       object-fit: cover;
       border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     }
 
-    .story-text {
-      font-size: 1.05rem;
-      line-height: 1.9;
+    .origin-text {
+      font-size: 1rem;
+      line-height: 2;
       color: #4a5568;
     }
 
-    .story-text p + p { margin-top: 1.2rem; }
+    .origin-text p + p { margin-top: 1.3rem; }
 
-    .story-text strong { color: var(--primary); }
+    /* Quote */
+    .quote-section {
+      padding: 6rem 2rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
 
-    /* Quote block */
-    .quote-block {
-      background: linear-gradient(135deg, var(--primary), #001f5c);
+    .quote-card {
+      background: linear-gradient(135deg, var(--primary), #001d50);
       color: #fff;
-      text-align: center;
       border-radius: 20px;
-      padding: 4rem 2.5rem;
-      margin: 4rem 0;
+      padding: 4rem 3rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .quote-block::before {
-      content: '"';
+    .quote-card::before {
+      content: '\201C';
       position: absolute;
-      top: -20px;
-      left: 30px;
-      font-size: 180px;
+      top: -30px;
+      left: 20px;
+      font-size: 200px;
       font-family: Georgia, serif;
-      color: rgba(255,255,255,0.05);
+      color: rgba(255, 255, 255, 0.04);
       line-height: 1;
     }
 
-    .quote-block blockquote {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+    .quote-card blockquote {
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
       font-style: italic;
-      line-height: 1.6;
+      line-height: 1.7;
       position: relative;
       z-index: 1;
     }
 
-    .quote-block cite {
+    .quote-card cite {
       display: block;
       margin-top: 1.5rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-style: normal;
-      opacity: 0.6;
+      opacity: 0.5;
       letter-spacing: 2px;
+    }
+
+    /* Significance section */
+    .sig-section {
+      background: var(--light);
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .sig-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.2rem;
+      border: 1px solid rgba(0, 61, 165, 0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .sig-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    }
+
+    .sig-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .sig-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .sig-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
     /* Timeline */
     .timeline-section {
-      background: var(--light);
+      background: #fff;
     }
 
     .timeline {
@@ -317,110 +364,56 @@
       height: 14px;
       background: var(--primary);
       border-radius: 50%;
-      border: 3px solid var(--light);
+      border: 3px solid #fff;
       transform: translateX(-5px);
     }
 
     .timeline-year {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 800;
       color: var(--accent);
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
 
     .timeline-event {
       font-size: 1.05rem;
       color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* Meaning cards */
-    .meaning-section {
-      background: #fff;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .card {
-      background: var(--light);
-      border-radius: 16px;
-      padding: 2rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid rgba(0,61,165,0.06);
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-    }
-
-    .card-icon {
-      width: 56px;
-      height: 56px;
-      background: var(--primary);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.8rem;
-    }
-
-    .card-text {
-      font-size: 0.95rem;
-      color: var(--muted);
       line-height: 1.7;
     }
 
-    /* Facts section */
-    .facts-section {
+    /* Stats */
+    .stats-section {
       background: linear-gradient(135deg, #001f5c, var(--primary));
       color: #fff;
     }
 
-    .facts-section .section-label { color: rgba(255,255,255,0.5); }
-    .facts-section .section-title { color: #fff; }
-    .facts-section .section-body { color: rgba(255,255,255,0.7); }
-
-    .facts-grid {
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
       margin-top: 3rem;
     }
 
-    .fact-item {
+    .stat-item {
       text-align: center;
     }
 
-    .fact-number {
-      font-size: 3rem;
+    .stat-num {
+      font-size: 2.8rem;
       font-weight: 900;
       color: var(--accent);
       line-height: 1;
     }
 
-    .fact-label {
+    .stat-label {
       margin-top: 0.5rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
+      font-size: 0.85rem;
+      opacity: 0.6;
     }
 
-    /* CTA footer */
+    /* CTA */
     .cta-section {
       text-align: center;
       padding: 8rem 2rem;
@@ -428,8 +421,8 @@
     }
 
     .cta-section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
       color: var(--primary);
       margin-bottom: 1rem;
     }
@@ -439,14 +432,14 @@
       font-size: 1.05rem;
       max-width: 500px;
       margin: 0 auto 2.5rem;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     .cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 16px 40px;
+      padding: 15px 40px;
       background: var(--primary);
       color: #fff;
       border-radius: 100px;
@@ -457,29 +450,24 @@
     }
 
     .cta-btn:hover {
-      background: #002d6e;
+      background: #002566;
       transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,61,165,0.3);
+      box-shadow: 0 12px 40px rgba(0, 61, 165, 0.3);
     }
 
     /* Footer */
     footer {
-      background: #001636;
-      color: rgba(255,255,255,0.4);
+      background: #001430;
+      color: rgba(255, 255, 255, 0.35);
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       font-size: 0.85rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer strong { color: rgba(255,255,255,0.6); }
 
     /* Animations */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(8px); }
@@ -487,20 +475,19 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* Responsive */
-    @media (max-width: 640px) {
-      .story-grid { grid-template-columns: 1fr; }
-      .story-img { order: -1; }
-      section { padding: 4rem 1.5rem; }
+    @media (max-width: 680px) {
+      .origin-grid { grid-template-columns: 1fr; }
+      .sig-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .origin-img { display: none; }
+      section { padding: 5rem 1.5rem; }
     }
   </style>
 </head>
@@ -515,315 +502,263 @@
   <!-- Hero -->
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-badge" data-i18n="hero.badge">World Book Day</div>
-      <h1 data-i18n="hero.title">世界<br><em>读书日</em></h1>
-      <p class="date-line" data-i18n="hero.date">每年的 4 月 23 日</p>
-      <p class="subtitle" data-i18n="hero.subtitle">让世界上每一个角落的每一个人，都能读到书。</p>
-      <a href="#story" class="hero-cta" data-i18n="hero.cta">探索它的故事 ↓</a>
+      <div class="hero-badge">World Book Day</div>
+      <h1>世界<br><em>读书日</em></h1>
+      <p class="date-tag">April 23 · 4月23日</p>
+      <p class="tagline">让世界上每一个角落的每一个人，都能读到书。</p>
+      <a href="#origin" class="hero-cta">了解它的故事 ↓</a>
     </div>
     <div class="scroll-hint">SCROLL</div>
   </div>
 
-  <!-- Story: Legend -->
-  <section class="story-section" id="story">
-    <div class="section-label" data-i18n="story.label">来历</div>
-    <h2 class="section-title" data-i18n="story.title">一本书救公主，<br>屠龙勇士的传说</h2>
-    <div class="story-grid">
-      <div>
-        <div class="story-text" id="story-text"></div>
-      </div>
+  <!-- Origin -->
+  <section class="origin-section" id="origin">
+    <div class="section-label">01 · Origins</div>
+    <h2 class="section-title">世界读书日<br>从何而来？</h2>
+    <div class="origin-grid">
       <img
-        src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80"
-        alt="书籍与玫瑰"
-        class="story-img"
+        src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&q=80"
+        alt="图书馆"
+        class="origin-img"
         loading="lazy"
       >
+      <div class="origin-text" id="origin-text"></div>
     </div>
   </section>
 
   <div class="divider"></div>
 
   <!-- Quote -->
-  <section>
-    <div class="quote-block reveal" id="quote-block"></div>
-  </section>
+  <div class="quote-section">
+    <div class="quote-card reveal" id="quote-card"></div>
+  </div>
 
   <!-- Timeline -->
-  <section class="timeline-section">
-    <div class="section-label" data-i18n="timeline.label">历史</div>
-    <h2 class="section-title" data-i18n="timeline.title">从加泰罗尼亚传说<br>到全球节日</h2>
+  <section class="timeline-section" id="timeline-section">
+    <div class="section-label">02 · History</div>
+    <h2 class="section-title">它的历史<br>是怎么走过来的？</h2>
     <div class="timeline reveal" id="timeline"></div>
   </section>
 
-  <!-- Why this date -->
-  <section class="story-section" style="background: var(--light);" id="date-section">
-    <div class="section-label" data-i18n="date.label">巧合</div>
-    <h2 class="section-title" data-i18n="date.title">为什么是<br>4 月 23 日？</h2>
-    <div class="section-body reveal" id="date-body"></div>
+  <div class="divider"></div>
+
+  <!-- Significance -->
+  <section class="sig-section" id="sig-section">
+    <div class="section-label">03 · Significance</div>
+    <h2 class="section-title">它对今天的生活<br>有什么意义？</h2>
+    <div class="sig-grid reveal" id="sig-grid"></div>
   </section>
 
-  <!-- Meaning -->
-  <section class="meaning-section">
-    <div class="section-label" data-i18n="meaning.label">意义</div>
-    <h2 class="section-title" data-i18n="meaning.title">世界读书日<br>为何重要？</h2>
-    <div class="cards reveal" id="meaning-cards"></div>
-  </section>
+  <div class="divider"></div>
 
-  <!-- Facts -->
-  <section class="facts-section">
-    <div class="section-label" data-i18n="facts.label">数据</div>
-    <h2 class="section-title" data-i18n="facts.title">全球共读</h2>
-    <div class="section-body" data-i18n="facts.body">100 多个国家与地区每年同步庆祝，书籍是人类文明最普遍的载体。</div>
-    <div class="facts-grid reveal" id="facts-grid"></div>
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="section-label" style="color: rgba(255,255,255,0.45);">04 · Data</div>
+    <h2 class="section-title" style="color:#fff;">今天，全球都在读</h2>
+    <div class="stats-grid reveal" id="stats-grid"></div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section">
-    <h2 data-i18n="cta.title">今天，拿起一本书</h2>
-    <p data-i18n="cta.desc">不需要等到"正确的时间"。读书日存在的意义，不是提醒你这一天要读书——是提醒你：每天都值得读书。</p>
-    <a href="https://www.douban.com/" target="_blank" rel="noopener" class="cta-btn" data-i18n="cta.btn">
+    <h2>今天，拿起一本书</h2>
+    <p id="cta-desc">不需要等到"正确的时间"。读书日存在的意义，是提醒你：每天都值得读书。</p>
+    <a href="https://www.douban.com/" target="_blank" rel="noopener" class="cta-btn" id="cta-btn">
       去找一本想读的书 →
     </a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p data-i18n="footer.line1">世界读书日 · World Book Day · 联合国教科文组织，1995</p>
-    <p style="margin-top: 0.5rem;" data-i18n="footer.line2">今天是第 <strong id="year-counter"></strong> 届世界读书日</p>
+    <p>World Book Day · 世界读书日 · UNESCO, 1995</p>
+    <p style="margin-top:0.5rem;">今天是第 <strong id="year-num"></strong> 届</p>
   </footer>
 
   <script>
-    const LANG = {
+    // ── Content ─────────────────────────────────────────────────────────
+    const CONTENT = {
       zh: {
-        'hero.badge': 'World Book Day',
-        'hero.title': '世界<br><em>读书日</em>',
-        'hero.date': '每年的 4 月 23 日',
-        'hero.subtitle': '让世界上每一个角落的每一个人，都能读到书。',
-        'hero.cta': '探索它的故事 ↓',
-        'story.label': '来历',
-        'story.title': '一本书救公主，<br>屠龙勇士的传说',
-        'story.p1': '世界读书日的灵感，源自西班牙<strong>加泰罗尼亚地区</strong>一个古老的传说。',
-        'story.p2': '很久以前，一头恶龙盘踞深山，将公主囚于孤塔。世界无人能敌——直到勇士<strong>圣乔治</strong>只身闯入，以剑屠龙，救回公主。',
-        'story.p3': '公主感激之余，从书堆中取出一本书，赠予圣乔治，说：「书是胆识与力量。」从此，4 月 23 日成为当地的<strong>「圣乔治节」</strong>。',
-        'story.p4': '每逢这天，加泰罗尼亚的男人会送玫瑰给女人，女人则回赠一本书——这便是西班牙"玫瑰与图书日"的由来。',
-        'quote.text': '我们必须能够让每一个地方每一个人都获得图书。',
-        'quote.author': '— 联合国教科文组织官员 米拉格罗斯·德尔·科罗尔',
-        'timeline.label': '历史',
-        'timeline.title': '从加泰罗尼亚传说<br>到全球节日',
-        'timeline.1972': '联合国教科文组织向全世界发出"走向阅读社会"号召，要求图书成为每个人生活的必需品。',
-        'timeline.1995': '国际出版商协会在巴塞罗那全球大会上提出"世界图书日"设想，西班牙政府提交方案至联合国教科文组织。同年 11 月 15 日，教科文组织正式宣布4月23日为"世界图书与版权日"。',
-        'timeline.1996': '联合国教科文组织将节日正式更名为"世界读书日"，并在全球推动各类阅读推广活动。',
-        'timeline.today': '100 多个国家每年举办庆祝活动，世界读书日已成为人类最广泛认同的文化节日之一。',
-        'date.label': '巧合',
-        'date.title': '为什么是<br>4 月 23 日？',
-        'date.intro': '选择这一天，并非偶然。4 月 23 日是世界文学史上最沉重的日子之一：',
-        'date.cervantes': '<strong>塞万提斯</strong>（西班牙《堂吉诃德》作者）辞世——1616年4月23日',
-        'date.shakespeare1': '<strong>莎士比亚</strong>（英国戏剧大师）辞世——1616年4月23日（同一天！）',
-        'date.shakespeare2': '<strong>莎士比亚</strong>出生——1564年4月23日（生死同日）',
-        'date.others': '此外，这一天也是美国作家纳博科夫、法国作家莫里斯·德鲁昂、冰岛诺贝尔文学奖得主拉克斯内斯等多位文学大师的生日。',
-        'date.outro': '冥冥之中，4 月 23 日天然属于文学与书籍。',
-        'meaning.label': '意义',
-        'meaning.title': '世界读书日<br>为何重要？',
-        'meaning.c1.title': '推动阅读',
-        'meaning.c1.text': '让更多人意识到读书的价值，培养终身阅读的习惯。阅读是拓展认知边界最平等的方式。',
-        'meaning.c2.title': '促进文化交流',
-        'meaning.c2.text': '阅读跨越语言与国界，帮助不同文化背景的人相互理解，建设更包容的世界。',
-        'meaning.c3.title': '保护知识产权',
-        'meaning.c3.text': '"版权日"的加入，提醒人们尊重创作者的劳动，让书籍与创意得到应有的保护。',
-        'meaning.c4.title': '关注青少年',
-        'meaning.c4.text': '世界读书日尤其重视青少年阅读习惯的培养，引导下一代尊重知识、热爱学习。',
-        'facts.label': '数据',
-        'facts.title': '全球共读',
-        'facts.body': '100 多个国家与地区每年同步庆祝，书籍是人类文明最普遍的载体。',
-        'facts.f1': '参与国家与地区',
-        'facts.f2': '届中国世界读书日',
-        'facts.f3': 'UNESCO 正式设立',
-        'facts.f4': '莎士比亚生死同日',
-        'cta.title': '今天，拿起一本书',
-        'cta.desc': '不需要等到"正确的时间"。读书日存在的意义，不是提醒你这一天要读书——是提醒你：每天都值得读书。',
-        'cta.btn': '去找一本想读的书 →',
-        'footer.line1': '世界读书日 · World Book Day · 联合国教科文组织，1995',
-        'footer.line2': '今天是第 {n} 届世界读书日',
+        origin: `
+          <p>世界读书日的构想，最初来自<strong>国际出版商协会</strong>。1995年，该协会在巴塞罗那召开全球大会时提出这个创意，西班牙政府随后将方案提交<strong>联合国教科文组织</strong>。</p>
+          <p>但灵感源头，是西班牙加泰罗尼亚地区流传数百年的<strong>圣乔治屠龙传说</strong>。</p>
+          <p>传说，勇士圣乔治只身击败恶龙，救出被困公主。公主赠书以谢，书从此成为"胆识与力量"的象征。4月23日因此成为当地圣乔治节——男人送玫瑰，女人赠书。</p>
+          <p>UNESCO 选择4月23日还有另一层深意：这一天，是<strong>塞万提斯</strong>（1616）和<strong>莎士比亚</strong>（1564–1616）的辞世纪念日，也是多位文学大师的生日。文学与书，天然属于这一天。</p>
+        `,
+        quote: {
+          text: '我们必须能够让每一个地方每一个人都获得图书。',
+          author: '— 联合国教科文组织 · 1995年设立世界读书日'
+        },
+        timeline: [
+          { year: '1972', event: '联合国教科文组织向全世界发出"走向阅读社会"号召，要求图书成为每个人生活的必需品。' },
+          { year: '1995', event: '国际出版商协会在巴塞罗那大会上提出设想，西班牙政府提交方案，UNESCO 于11月15日正式宣布4月23日为"世界图书与版权日"。' },
+          { year: '1996', event: 'UNESCO 将节日正式更名为"世界读书日"，并在全球推动阅读推广活动。' },
+          { year: 'Today', event: '100多个国家与地区每年同步庆祝。世界读书日已成为联合国认定的最具影响力的全球性文化节日之一。' }
+        ],
+        significance: [
+          {
+            icon: '📚',
+            title: '让阅读成为日常',
+            text: '提醒所有人：读书不是任务，是权利。在信息爆炸的时代，深度阅读是保持独立思考最有效的方式。'
+          },
+          {
+            icon: '🌍',
+            title: '跨越文化边界',
+            text: '书是唯一不需要护照的知识载体。世界读书日推动不同文化间的理解与对话，让差异成为连接而非隔阂。'
+          },
+          {
+            icon: '✍️',
+            title: '尊重创作与版权',
+            text: '"版权日"提醒我们：每一本书背后都是一个活生生的人。保护版权，就是保护创作者继续写作的权利。'
+          },
+          {
+            icon: '👶',
+            title: '培养下一代读者',
+            text: '世界读书日特别关注青少年——帮孩子从小养成阅读习惯，是给他们的最好礼物，也是社会最值得的投资。'
+          }
+        ],
+        stats: [
+          { num: '100+', label: '参与国家与地区' },
+          { num: '31', label: '届中国世界读书日' },
+          { num: '1995', label: 'UNESCO 正式设立' },
+          { num: '4/23', label: '莎士比亚生死同日' }
+        ],
+        ctaDesc: '不需要等到"正确的时间"。读书日存在的意义，是提醒你：每天都值得读书。',
+        ctaBtn: '去找一本想读的书 →'
       },
       en: {
-        'hero.badge': 'World Book Day',
-        'hero.title': 'World<br><em>Book Day</em>',
-        'hero.date': 'Every year, April 23rd',
-        'hero.subtitle': 'Making books available to every person, in every corner of the world.',
-        'hero.cta': 'Explore Its Story ↓',
-        'story.label': 'Origins',
-        'story.title': 'A Book Saves a Princess,<br>Legend of the Dragon Slayer',
-        'story.p1': 'The inspiration for World Book Day comes from an ancient legend of <strong>Catalonia</strong>, Spain.',
-        'story.p2': 'Long ago, a dragon took shelter in a mountain and locked a princess in a lonely tower. No one in the world could defeat it — until the warrior <strong>Saint George</strong> ventured in alone, slew the dragon with his sword, and rescued the princess.',
-        'story.p3': 'In gratitude, the princess took a book from a pile and gave it to Saint George, saying: "A book is courage and strength." From that day on, April 23rd became the local <strong>Saint George\'s Day</strong>.',
-        'story.p4': 'On this day, men in Catalonia give roses to women, and women give books in return — this is the origin of Spain\'s "Roses and Books Day."',
-        'quote.text': 'We must make it possible for every person, in every place, to have access to books.',
-        'quote.author': '— Miraflores del科尔尔, UNESCO Director',
-        'timeline.label': 'History',
-        'timeline.title': 'From a Catalan Legend<br>to a Global Holiday',
-        'timeline.1972': 'UNESCO calls on the world to "move toward a reading society," requiring books to become a daily necessity for everyone.',
-        'timeline.1995': 'The International Publishers Association proposes "World Book Day" at the Barcelona Global Congress. The Spanish government submits the proposal to UNESCO. On November 15th, UNESCO officially declares April 23rd as "World Book and Copyright Day."',
-        'timeline.1996': 'UNESCO officially renames the holiday "World Book Day" and promotes reading activities worldwide.',
-        'timeline.today': 'Over 100 countries hold celebrations every year, making World Book Day one of the most widely recognized cultural holidays.',
-        'date.label': 'Coincidence',
-        'date.title': 'Why<br>April 23rd?',
-        'date.intro': 'Choosing this date was no accident. April 23rd is one of the most significant days in world literary history:',
-        'date.cervantes': '<strong>Miguel de Cervantes</strong> (author of <em>Don Quixote</em>) died — April 23, 1616',
-        'date.shakespeare1': '<strong>William Shakespeare</strong> (English playwright) died — April 23, 1616 (same day!)',
-        'date.shakespeare2': '<strong>William Shakespeare</strong> born — April 23, 1564 (same day of birth and death)',
-        'date.others': 'This day is also the birthday of American author Vladimir Nabokov, French writer Maurice Druon, and Icelandic Nobel laureate Halldór Laxness.',
-        'date.outro': 'In fate\'s design, April 23rd belongs naturally to literature and books.',
-        'meaning.label': 'Significance',
-        'meaning.title': 'Why Does<br>World Book Day Matter?',
-        'meaning.c1.title': 'Promote Reading',
-        'meaning.c1.text': 'Help more people recognize the value of reading and develop lifelong reading habits. Reading is the most equal path to expanding one's horizons.',
-        'meaning.c2.title': 'Foster Cultural Exchange',
-        'meaning.c2.text': 'Reading transcends language and borders, helping people of different cultural backgrounds understand each other and building a more inclusive world.',
-        'meaning.c3.title': 'Protect Intellectual Property',
-        'meaning.c3.text': 'The "Copyright Day" component reminds people to respect creators\' work, ensuring books and ideas receive proper protection.',
-        'meaning.c4.title': 'Focus on Youth',
-        'meaning.c4.text': 'World Book Day places special emphasis on cultivating reading habits among young people, guiding the next generation to respect knowledge and love learning.',
-        'facts.label': 'Facts',
-        'facts.title': 'Global Reading',
-        'facts.body': 'Over 100 countries and regions celebrate together each year. Books are the most universal carrier of human civilization.',
-        'facts.f1': 'Countries & Regions',
-        'facts.f2': 'World Book Days Held',
-        'facts.f3': 'Established by UNESCO',
-        'facts.f4': "Shakespeare's Birth & Death",
-        'cta.title': 'Pick Up a Book Today',
-        'cta.desc': 'You don\'t need to wait for the "right time." World Book Day\'s purpose is not to remind you to read on this day — but to remind you: every day is worth reading.',
-        'cta.btn': 'Find a book to read →',
-        'footer.line1': 'World Book Day · 世界读书日 · UNESCO, 1995',
-        'footer.line2': 'This is the {n}th World Book Day',
+        origin: `
+          <p>The idea for World Book Day originated from the <strong>International Publishers Association</strong>. In 1995, at their global congress in Barcelona, they proposed the concept, and the Spanish government brought it to <strong>UNESCO</strong>.</p>
+          <p>But the deeper inspiration comes from a centuries-old legend in <strong>Catalonia, Spain</strong> — the story of Saint George and the dragon.</p>
+          <p>The legend says warrior Saint George slew a dragon to rescue a captive princess. In gratitude, the princess gave him a book, declaring: "Books are courage and strength." April 23rd became Saint George's Day — men give roses, women give books.</p>
+          <p>UNESCO had another reason to choose April 23rd: it is the death anniversary of both <strong>Miguel de Cervantes</strong> (1616) and <strong>William Shakespeare</strong> (1564–1616), as well as the birthday of several other literary masters. Literature and books belong naturally to this day.</p>
+        `,
+        quote: {
+          text: 'We must make it possible for every person, in every place, to have access to books.',
+          author: '— UNESCO · World Book Day established 1995'
+        },
+        timeline: [
+          { year: '1972', event: 'UNESCO calls on the world to "move toward a reading society," making books a daily necessity for every person.' },
+          { year: '1995', event: 'The International Publishers Association proposes the idea in Barcelona. Spain submits the proposal to UNESCO, which officially declares April 23rd "World Book and Copyright Day" on November 15th.' },
+          { year: '1996', event: 'UNESCO officially renames it "World Book Day" and begins promoting reading activities worldwide.' },
+          { year: 'Today', event: 'Over 100 countries and regions celebrate together each year. World Book Day has become one of the most influential globally recognized cultural holidays.' }
+        ],
+        significance: [
+          {
+            icon: '📚',
+            title: 'Make Reading a Daily Habit',
+            text: 'Remind everyone: reading is not a task, it is a right. In the age of information overload, deep reading is the most effective way to maintain independent thinking.'
+          },
+          {
+            icon: '🌍',
+            title: 'Bridge Cultural Divides',
+            text: 'Books are the only knowledge carriers that need no passport. World Book Day promotes understanding and dialogue between cultures, turning differences into connections.'
+          },
+          {
+            icon: '✍️',
+            title: 'Respect Creativity and Copyright',
+            text: 'The "Copyright Day" component reminds us: behind every book is a living person. Protecting copyright means protecting creators\' right to keep writing.'
+          },
+          {
+            icon: '👶',
+            title: 'Nurture the Next Generation of Readers',
+            text: 'World Book Day places special focus on young people — helping children develop reading habits early is the best gift we can give, and society\'s most worthwhile investment.'
+          }
+        ],
+        stats: [
+          { num: '100+', label: 'Countries & Regions' },
+          { num: '31', label: 'World Book Days Held' },
+          { num: '1995', label: 'Established by UNESCO' },
+          { num: '4/23', label: "Shakespeare's Birth & Death" }
+        ],
+        ctaDesc: "You don't need to wait for the \"right time.\" World Book Day's purpose is to remind you: every day is worth reading.",
+        ctaBtn: 'Find a book to read →'
       }
     };
 
-    let currentLang = localStorage.getItem('wbd-lang') || 'zh';
+    // ── State ──────────────────────────────────────────────────────────
+    let lang = localStorage.getItem('wbd-lang') || 'zh';
 
-    function t(key) {
-      const text = LANG[currentLang][key] || key;
-      return text;
-    }
-
-    function renderStatic() {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const text = t(key);
-        if (el.tagName === 'H1') {
-          el.innerHTML = text;
-        } else {
-          el.textContent = el.dataset.i18nPlain ? text : text;
-          if (el.tagName !== 'H2') el.textContent = text;
-        }
-      });
-    }
-
-    function renderStoryText() {
-      const el = document.getElementById('story-text');
-      const keys = ['story.p1','story.p2','story.p3','story.p4'];
-      el.innerHTML = keys.map(k => `<p>${t(k)}</p>`).join('');
-    }
-
-    function renderQuote() {
-      const block = document.getElementById('quote-block');
-      block.innerHTML = `<blockquote>${t('quote.text')}</blockquote><cite>${t('quote.author')}</cite>`;
-    }
-
-    function renderTimeline() {
-      const el = document.getElementById('timeline');
-      const years = ['1972','1995','1996','today'];
-      const labels = { '1972': '1972', '1995': '1995', '1996': '1996', 'today': 'Today' };
-      el.innerHTML = years.map(y => `
-        <div class="timeline-item">
-          <div class="timeline-year">${labels[y]}</div>
-          <div class="timeline-event">${t('timeline.' + y)}</div>
-        </div>`).join('');
-    }
-
-    function renderDateBody() {
-      const el = document.getElementById('date-body');
-      const keys = ['date.intro','date.cervantes','date.shakespeare1','date.shakespeare2','date.others','date.outro'];
-      el.innerHTML = keys.map(k => `<p>${t(k)}</p>`).join('');
-    }
-
-    function renderMeaningCards() {
-      const el = document.getElementById('meaning-cards');
-      const icons = ['📖','🌍','⚖️','🎓'];
-      const keys = ['c1','c2','c3','c4'];
-      el.innerHTML = keys.map((k, i) => `
-        <div class="card">
-          <div class="card-icon">${icons[i]}</div>
-          <div class="card-title">${t('meaning.' + k + '.title')}</div>
-          <div class="card-text">${t('meaning.' + k + '.text')}</div>
-        </div>`).join('');
-    }
-
-    function renderFacts() {
-      const el = document.getElementById('facts-grid');
-      const numbers = ['100+', String(new Date().getFullYear() - 1995 + 1), '1995', '4/23'];
-      const keys = ['f1','f2','f3','f4'];
-      el.innerHTML = keys.map((k, i) => `
-        <div class="fact-item">
-          <div class="fact-number">${numbers[i]}</div>
-          <div class="fact-label">${t('facts.' + k)}</div>
-        </div>`).join('');
-    }
-
-    function renderFooter() {
-      const n = new Date().getFullYear() - 1995 + 1;
-      const line2 = t('footer.line2').replace('{n}', n);
-      document.querySelector('footer p:last-child').innerHTML = line2;
-    }
-
-    function switchLang(lang) {
-      currentLang = lang;
+    function setLang(newLang) {
+      lang = newLang;
       localStorage.setItem('wbd-lang', lang);
 
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.id === 'btn-' + lang);
-      });
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-      document.querySelector('html').lang = lang === 'zh' ? 'zh-CN' : 'en';
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
       document.title = lang === 'zh'
         ? '世界读书日 — 4月23日'
         : 'World Book Day — April 23rd';
 
-      renderStatic();
-      renderStoryText();
-      renderQuote();
-      renderTimeline();
-      renderDateBody();
-      renderMeaningCards();
-      renderFacts();
-      renderFooter();
+      render();
+    }
 
-      // Re-trigger reveal animations
-      document.querySelectorAll('.reveal').forEach(el => el.classList.remove('visible'));
+    function render() {
+      const c = CONTENT[lang];
+
+      // Hero tagline
+      document.querySelector('.tagline').textContent =
+        lang === 'zh'
+          ? '让世界上每一个角落的每一个人，都能读到书。'
+          : 'Making books available to every person, in every corner of the world.';
+
+      // Origin text
+      document.getElementById('origin-text').innerHTML = c.origin.trim();
+
+      // Quote
+      document.getElementById('quote-card').innerHTML =
+        `<blockquote>${c.quote.text}</blockquote><cite>${c.quote.author}</cite>`;
+
+      // Timeline
+      document.getElementById('timeline').innerHTML = c.timeline.map(item => `
+        <div class="timeline-item">
+          <div class="timeline-year">${item.year}</div>
+          <div class="timeline-event">${item.event}</div>
+        </div>`).join('');
+
+      // Significance
+      document.getElementById('sig-grid').innerHTML = c.significance.map(item => `
+        <div class="sig-item">
+          <div class="sig-icon">${item.icon}</div>
+          <div class="sig-title">${item.title}</div>
+          <div class="sig-text">${item.text}</div>
+        </div>`).join('');
+
+      // Stats
+      document.getElementById('stats-grid').innerHTML = c.stats.map(item => `
+        <div class="stat-item">
+          <div class="stat-num">${item.num}</div>
+          <div class="stat-label">${item.label}</div>
+        </div>`).join('');
+
+      // CTA
+      document.getElementById('cta-desc').textContent = c.ctaDesc;
+      document.getElementById('cta-btn').textContent = c.ctaBtn;
+
+      // Footer
+      document.getElementById('year-num').textContent = new Date().getFullYear() - 1995 + 1;
+
+      // Re-trigger reveal
       setTimeout(() => {
         document.querySelectorAll('.reveal').forEach(el => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight) el.classList.add('visible');
+          const r = el.getBoundingClientRect();
+          el.classList.toggle('visible', r.top < window.innerHeight);
         });
       }, 50);
     }
 
-    document.getElementById('btn-zh').addEventListener('click', () => switchLang('zh'));
-    document.getElementById('btn-en').addEventListener('click', () => switchLang('en'));
+    // ── Init ──────────────────────────────────────────────────────────
+    document.getElementById('btn-zh').addEventListener('click', () => setLang('zh'));
+    document.getElementById('btn-en').addEventListener('click', () => setLang('en'));
 
     // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
+    const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
       });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // Init
-    switchLang(currentLang);
+    setLang(lang);
   </script>
 </body>
 </html>
