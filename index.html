@@ -22,6 +22,43 @@
       overflow-x: hidden;
     }
 
+    /* Language switcher */
+    .lang-switcher {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      display: flex;
+      gap: 2px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 4px;
+      backdrop-filter: blur(8px);
+    }
+
+    .lang-btn {
+      padding: 6px 16px;
+      border: none;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+    }
+
+    .lang-btn.active {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: #fff;
+    }
+
     /* Hero */
     .hero {
       min-height: 100vh;
@@ -469,30 +506,31 @@
 </head>
 <body>
 
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="btn-zh">中文</button>
+    <button class="lang-btn" id="btn-en">EN</button>
+  </div>
+
   <!-- Hero -->
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-badge">World Book Day</div>
-      <h1>世界<br><em>读书日</em></h1>
-      <p class="date-line">每年的 4 月 23 日</p>
-      <p class="subtitle">让世界上每一个角落的每一个人，都能读到书。</p>
-      <a href="#story" class="hero-cta">探索它的故事 ↓</a>
+      <div class="hero-badge" data-i18n="hero.badge">World Book Day</div>
+      <h1 data-i18n="hero.title">世界<br><em>读书日</em></h1>
+      <p class="date-line" data-i18n="hero.date">每年的 4 月 23 日</p>
+      <p class="subtitle" data-i18n="hero.subtitle">让世界上每一个角落的每一个人，都能读到书。</p>
+      <a href="#story" class="hero-cta" data-i18n="hero.cta">探索它的故事 ↓</a>
     </div>
     <div class="scroll-hint">SCROLL</div>
   </div>
 
   <!-- Story: Legend -->
   <section class="story-section" id="story">
-    <div class="section-label">来历</div>
-    <h2 class="section-title">一本书救公主，<br>屠龙勇士的传说</h2>
+    <div class="section-label" data-i18n="story.label">来历</div>
+    <h2 class="section-title" data-i18n="story.title">一本书救公主，<br>屠龙勇士的传说</h2>
     <div class="story-grid">
       <div>
-        <div class="story-text">
-          <p>世界读书日的灵感，源自西班牙<strong>加泰罗尼亚地区</strong>一个古老的传说。</p>
-          <p>很久以前，一头恶龙盘踞深山，将公主囚于孤塔。世界无人能敌——直到勇士<strong>圣乔治</strong>只身闯入，以剑屠龙，救回公主。</p>
-          <p>公主感激之余，从书堆中取出一本书，赠予圣乔治，说：「书是胆识与力量。」从此，4 月 23 日成为当地的<strong>「圣乔治节」</strong>。</p>
-          <p>每逢这天，加泰罗尼亚的男人会送玫瑰给女人，女人则回赠一本书——这便是西班牙"玫瑰与图书日"的由来。</p>
-        </div>
+        <div class="story-text" id="story-text"></div>
       </div>
       <img
         src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80"
@@ -507,126 +545,270 @@
 
   <!-- Quote -->
   <section>
-    <div class="quote-block reveal">
-      <blockquote>
-        我们必须能够让每一个地方每一个人都获得图书。
-      </blockquote>
-      <cite>— 联合国教科文组织官员 米拉格罗斯·德尔·科罗尔</cite>
-    </div>
+    <div class="quote-block reveal" id="quote-block"></div>
   </section>
 
   <!-- Timeline -->
   <section class="timeline-section">
-    <div class="section-label">历史</div>
-    <h2 class="section-title">从加泰罗尼亚传说<br>到全球节日</h2>
-    <div class="timeline reveal">
-      <div class="timeline-item">
-        <div class="timeline-year">1972</div>
-        <div class="timeline-event">联合国教科文组织向全世界发出"走向阅读社会"号召，要求图书成为每个人生活的必需品。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">1995</div>
-        <div class="timeline-event">国际出版商协会在巴塞罗那全球大会上提出"世界图书日"设想，西班牙政府提交方案至联合国教科文组织。同年 11 月 15 日，教科文组织正式宣布4月23日为"世界图书与版权日"。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">1996</div>
-        <div class="timeline-event">联合国教科文组织将节日正式更名为"世界读书日"，并在全球推动各类阅读推广活动。</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">今天</div>
-        <div class="timeline-event">100 多个国家每年举办庆祝活动，世界读书日已成为人类最广泛认同的文化节日之一。</div>
-      </div>
-    </div>
+    <div class="section-label" data-i18n="timeline.label">历史</div>
+    <h2 class="section-title" data-i18n="timeline.title">从加泰罗尼亚传说<br>到全球节日</h2>
+    <div class="timeline reveal" id="timeline"></div>
   </section>
 
   <!-- Why this date -->
-  <section class="story-section" style="background: var(--light);">
-    <div class="section-label">巧合</div>
-    <h2 class="section-title">为什么是<br>4 月 23 日？</h2>
-    <div class="section-body reveal">
-      <p>选择这一天，并非偶然。4 月 23 日是世界文学史上最沉重的日子之一：</p>
-      <br>
-      <p><strong>塞万提斯</strong>（西班牙《堂吉诃德》作者）辞世——1616年4月23日</p>
-      <p><strong>莎士比亚</strong>（英国戏剧大师）辞世——1616年4月23日（同一天！）</p>
-      <p><strong>莎士比亚</strong>出生——1564年4月23日（生死同日）</p>
-      <br>
-      <p>此外，这一天也是美国作家纳博科夫、法国作家莫里斯·德鲁昂、冰岛诺贝尔文学奖得主拉克斯内斯等多位文学大师的生日。</p>
-      <br>
-      <p>冥冥之中，4 月 23 日天然属于文学与书籍。</p>
-    </div>
+  <section class="story-section" style="background: var(--light);" id="date-section">
+    <div class="section-label" data-i18n="date.label">巧合</div>
+    <h2 class="section-title" data-i18n="date.title">为什么是<br>4 月 23 日？</h2>
+    <div class="section-body reveal" id="date-body"></div>
   </section>
 
   <!-- Meaning -->
   <section class="meaning-section">
-    <div class="section-label">意义</div>
-    <h2 class="section-title">世界读书日<br>为何重要？</h2>
-    <div class="cards reveal">
-      <div class="card">
-        <div class="card-icon">📖</div>
-        <div class="card-title">推动阅读</div>
-        <div class="card-text">让更多人意识到读书的价值，培养终身阅读的习惯。阅读是拓展认知边界最平等的方式。</div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🌍</div>
-        <div class="card-title">促进文化交流</div>
-        <div class="card-text">阅读跨越语言与国界，帮助不同文化背景的人相互理解，建设更包容的世界。</div>
-      </div>
-      <div class="card">
-        <div class="card-icon">⚖️</div>
-        <div class="card-title">保护知识产权</div>
-        <div class="card-text">"版权日"的加入，提醒人们尊重创作者的劳动，让书籍与创意得到应有的保护。</div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎓</div>
-        <div class="card-title">关注青少年</div>
-        <div class="card-text">世界读书日尤其重视青少年阅读习惯的培养，引导下一代尊重知识、热爱学习。</div>
-      </div>
-    </div>
+    <div class="section-label" data-i18n="meaning.label">意义</div>
+    <h2 class="section-title" data-i18n="meaning.title">世界读书日<br>为何重要？</h2>
+    <div class="cards reveal" id="meaning-cards"></div>
   </section>
 
   <!-- Facts -->
   <section class="facts-section">
-    <div class="section-label" style="color: rgba(255,255,255,0.5);">数据</div>
-    <h2 class="section-title">全球共读</h2>
-    <div class="section-body">100 多个国家与地区每年同步庆祝，书籍是人类文明最普遍的载体。</div>
-    <div class="facts-grid reveal">
-      <div class="fact-item">
-        <div class="fact-number">100+</div>
-        <div class="fact-label">参与国家与地区</div>
-      </div>
-      <div class="fact-item">
-        <div class="fact-number">31</div>
-        <div class="fact-label">届中国世界读书日</div>
-      </div>
-      <div class="fact-item">
-        <div class="fact-number">1995</div>
-        <div class="fact-label">UNESCO 正式设立</div>
-      </div>
-      <div class="fact-item">
-        <div class="fact-number">4/23</div>
-        <div class="fact-label">莎士比亚生死同日</div>
-      </div>
-    </div>
+    <div class="section-label" data-i18n="facts.label">数据</div>
+    <h2 class="section-title" data-i18n="facts.title">全球共读</h2>
+    <div class="section-body" data-i18n="facts.body">100 多个国家与地区每年同步庆祝，书籍是人类文明最普遍的载体。</div>
+    <div class="facts-grid reveal" id="facts-grid"></div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section">
-    <h2>今天，拿起一本书</h2>
-    <p>不需要等到"正确的时间"。读书日存在的意义，不是提醒你这一天要读书——是提醒你：每天都值得读书。</p>
-    <a href="https://www.douban.com/" target="_blank" rel="noopener" class="cta-btn">
+    <h2 data-i18n="cta.title">今天，拿起一本书</h2>
+    <p data-i18n="cta.desc">不需要等到"正确的时间"。读书日存在的意义，不是提醒你这一天要读书——是提醒你：每天都值得读书。</p>
+    <a href="https://www.douban.com/" target="_blank" rel="noopener" class="cta-btn" data-i18n="cta.btn">
       去找一本想读的书 →
     </a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>世界读书日 · World Book Day · 联合国教科文组织，1995</p>
-    <p style="margin-top: 0.5rem;">今天是第 <strong id="year-counter"></strong> 届世界读书日</p>
+    <p data-i18n="footer.line1">世界读书日 · World Book Day · 联合国教科文组织，1995</p>
+    <p style="margin-top: 0.5rem;" data-i18n="footer.line2">今天是第 <strong id="year-counter"></strong> 届世界读书日</p>
   </footer>
 
   <script>
-    // Year counter
-    document.getElementById('year-counter').textContent = new Date().getFullYear() - 1995 + 1;
+    const LANG = {
+      zh: {
+        'hero.badge': 'World Book Day',
+        'hero.title': '世界<br><em>读书日</em>',
+        'hero.date': '每年的 4 月 23 日',
+        'hero.subtitle': '让世界上每一个角落的每一个人，都能读到书。',
+        'hero.cta': '探索它的故事 ↓',
+        'story.label': '来历',
+        'story.title': '一本书救公主，<br>屠龙勇士的传说',
+        'story.p1': '世界读书日的灵感，源自西班牙<strong>加泰罗尼亚地区</strong>一个古老的传说。',
+        'story.p2': '很久以前，一头恶龙盘踞深山，将公主囚于孤塔。世界无人能敌——直到勇士<strong>圣乔治</strong>只身闯入，以剑屠龙，救回公主。',
+        'story.p3': '公主感激之余，从书堆中取出一本书，赠予圣乔治，说：「书是胆识与力量。」从此，4 月 23 日成为当地的<strong>「圣乔治节」</strong>。',
+        'story.p4': '每逢这天，加泰罗尼亚的男人会送玫瑰给女人，女人则回赠一本书——这便是西班牙"玫瑰与图书日"的由来。',
+        'quote.text': '我们必须能够让每一个地方每一个人都获得图书。',
+        'quote.author': '— 联合国教科文组织官员 米拉格罗斯·德尔·科罗尔',
+        'timeline.label': '历史',
+        'timeline.title': '从加泰罗尼亚传说<br>到全球节日',
+        'timeline.1972': '联合国教科文组织向全世界发出"走向阅读社会"号召，要求图书成为每个人生活的必需品。',
+        'timeline.1995': '国际出版商协会在巴塞罗那全球大会上提出"世界图书日"设想，西班牙政府提交方案至联合国教科文组织。同年 11 月 15 日，教科文组织正式宣布4月23日为"世界图书与版权日"。',
+        'timeline.1996': '联合国教科文组织将节日正式更名为"世界读书日"，并在全球推动各类阅读推广活动。',
+        'timeline.today': '100 多个国家每年举办庆祝活动，世界读书日已成为人类最广泛认同的文化节日之一。',
+        'date.label': '巧合',
+        'date.title': '为什么是<br>4 月 23 日？',
+        'date.intro': '选择这一天，并非偶然。4 月 23 日是世界文学史上最沉重的日子之一：',
+        'date.cervantes': '<strong>塞万提斯</strong>（西班牙《堂吉诃德》作者）辞世——1616年4月23日',
+        'date.shakespeare1': '<strong>莎士比亚</strong>（英国戏剧大师）辞世——1616年4月23日（同一天！）',
+        'date.shakespeare2': '<strong>莎士比亚</strong>出生——1564年4月23日（生死同日）',
+        'date.others': '此外，这一天也是美国作家纳博科夫、法国作家莫里斯·德鲁昂、冰岛诺贝尔文学奖得主拉克斯内斯等多位文学大师的生日。',
+        'date.outro': '冥冥之中，4 月 23 日天然属于文学与书籍。',
+        'meaning.label': '意义',
+        'meaning.title': '世界读书日<br>为何重要？',
+        'meaning.c1.title': '推动阅读',
+        'meaning.c1.text': '让更多人意识到读书的价值，培养终身阅读的习惯。阅读是拓展认知边界最平等的方式。',
+        'meaning.c2.title': '促进文化交流',
+        'meaning.c2.text': '阅读跨越语言与国界，帮助不同文化背景的人相互理解，建设更包容的世界。',
+        'meaning.c3.title': '保护知识产权',
+        'meaning.c3.text': '"版权日"的加入，提醒人们尊重创作者的劳动，让书籍与创意得到应有的保护。',
+        'meaning.c4.title': '关注青少年',
+        'meaning.c4.text': '世界读书日尤其重视青少年阅读习惯的培养，引导下一代尊重知识、热爱学习。',
+        'facts.label': '数据',
+        'facts.title': '全球共读',
+        'facts.body': '100 多个国家与地区每年同步庆祝，书籍是人类文明最普遍的载体。',
+        'facts.f1': '参与国家与地区',
+        'facts.f2': '届中国世界读书日',
+        'facts.f3': 'UNESCO 正式设立',
+        'facts.f4': '莎士比亚生死同日',
+        'cta.title': '今天，拿起一本书',
+        'cta.desc': '不需要等到"正确的时间"。读书日存在的意义，不是提醒你这一天要读书——是提醒你：每天都值得读书。',
+        'cta.btn': '去找一本想读的书 →',
+        'footer.line1': '世界读书日 · World Book Day · 联合国教科文组织，1995',
+        'footer.line2': '今天是第 {n} 届世界读书日',
+      },
+      en: {
+        'hero.badge': 'World Book Day',
+        'hero.title': 'World<br><em>Book Day</em>',
+        'hero.date': 'Every year, April 23rd',
+        'hero.subtitle': 'Making books available to every person, in every corner of the world.',
+        'hero.cta': 'Explore Its Story ↓',
+        'story.label': 'Origins',
+        'story.title': 'A Book Saves a Princess,<br>Legend of the Dragon Slayer',
+        'story.p1': 'The inspiration for World Book Day comes from an ancient legend of <strong>Catalonia</strong>, Spain.',
+        'story.p2': 'Long ago, a dragon took shelter in a mountain and locked a princess in a lonely tower. No one in the world could defeat it — until the warrior <strong>Saint George</strong> ventured in alone, slew the dragon with his sword, and rescued the princess.',
+        'story.p3': 'In gratitude, the princess took a book from a pile and gave it to Saint George, saying: "A book is courage and strength." From that day on, April 23rd became the local <strong>Saint George\'s Day</strong>.',
+        'story.p4': 'On this day, men in Catalonia give roses to women, and women give books in return — this is the origin of Spain\'s "Roses and Books Day."',
+        'quote.text': 'We must make it possible for every person, in every place, to have access to books.',
+        'quote.author': '— Miraflores del科尔尔, UNESCO Director',
+        'timeline.label': 'History',
+        'timeline.title': 'From a Catalan Legend<br>to a Global Holiday',
+        'timeline.1972': 'UNESCO calls on the world to "move toward a reading society," requiring books to become a daily necessity for everyone.',
+        'timeline.1995': 'The International Publishers Association proposes "World Book Day" at the Barcelona Global Congress. The Spanish government submits the proposal to UNESCO. On November 15th, UNESCO officially declares April 23rd as "World Book and Copyright Day."',
+        'timeline.1996': 'UNESCO officially renames the holiday "World Book Day" and promotes reading activities worldwide.',
+        'timeline.today': 'Over 100 countries hold celebrations every year, making World Book Day one of the most widely recognized cultural holidays.',
+        'date.label': 'Coincidence',
+        'date.title': 'Why<br>April 23rd?',
+        'date.intro': 'Choosing this date was no accident. April 23rd is one of the most significant days in world literary history:',
+        'date.cervantes': '<strong>Miguel de Cervantes</strong> (author of <em>Don Quixote</em>) died — April 23, 1616',
+        'date.shakespeare1': '<strong>William Shakespeare</strong> (English playwright) died — April 23, 1616 (same day!)',
+        'date.shakespeare2': '<strong>William Shakespeare</strong> born — April 23, 1564 (same day of birth and death)',
+        'date.others': 'This day is also the birthday of American author Vladimir Nabokov, French writer Maurice Druon, and Icelandic Nobel laureate Halldór Laxness.',
+        'date.outro': 'In fate\'s design, April 23rd belongs naturally to literature and books.',
+        'meaning.label': 'Significance',
+        'meaning.title': 'Why Does<br>World Book Day Matter?',
+        'meaning.c1.title': 'Promote Reading',
+        'meaning.c1.text': 'Help more people recognize the value of reading and develop lifelong reading habits. Reading is the most equal path to expanding one's horizons.',
+        'meaning.c2.title': 'Foster Cultural Exchange',
+        'meaning.c2.text': 'Reading transcends language and borders, helping people of different cultural backgrounds understand each other and building a more inclusive world.',
+        'meaning.c3.title': 'Protect Intellectual Property',
+        'meaning.c3.text': 'The "Copyright Day" component reminds people to respect creators\' work, ensuring books and ideas receive proper protection.',
+        'meaning.c4.title': 'Focus on Youth',
+        'meaning.c4.text': 'World Book Day places special emphasis on cultivating reading habits among young people, guiding the next generation to respect knowledge and love learning.',
+        'facts.label': 'Facts',
+        'facts.title': 'Global Reading',
+        'facts.body': 'Over 100 countries and regions celebrate together each year. Books are the most universal carrier of human civilization.',
+        'facts.f1': 'Countries & Regions',
+        'facts.f2': 'World Book Days Held',
+        'facts.f3': 'Established by UNESCO',
+        'facts.f4': "Shakespeare's Birth & Death",
+        'cta.title': 'Pick Up a Book Today',
+        'cta.desc': 'You don\'t need to wait for the "right time." World Book Day\'s purpose is not to remind you to read on this day — but to remind you: every day is worth reading.',
+        'cta.btn': 'Find a book to read →',
+        'footer.line1': 'World Book Day · 世界读书日 · UNESCO, 1995',
+        'footer.line2': 'This is the {n}th World Book Day',
+      }
+    };
+
+    let currentLang = localStorage.getItem('wbd-lang') || 'zh';
+
+    function t(key) {
+      const text = LANG[currentLang][key] || key;
+      return text;
+    }
+
+    function renderStatic() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const text = t(key);
+        if (el.tagName === 'H1') {
+          el.innerHTML = text;
+        } else {
+          el.textContent = el.dataset.i18nPlain ? text : text;
+          if (el.tagName !== 'H2') el.textContent = text;
+        }
+      });
+    }
+
+    function renderStoryText() {
+      const el = document.getElementById('story-text');
+      const keys = ['story.p1','story.p2','story.p3','story.p4'];
+      el.innerHTML = keys.map(k => `<p>${t(k)}</p>`).join('');
+    }
+
+    function renderQuote() {
+      const block = document.getElementById('quote-block');
+      block.innerHTML = `<blockquote>${t('quote.text')}</blockquote><cite>${t('quote.author')}</cite>`;
+    }
+
+    function renderTimeline() {
+      const el = document.getElementById('timeline');
+      const years = ['1972','1995','1996','today'];
+      const labels = { '1972': '1972', '1995': '1995', '1996': '1996', 'today': 'Today' };
+      el.innerHTML = years.map(y => `
+        <div class="timeline-item">
+          <div class="timeline-year">${labels[y]}</div>
+          <div class="timeline-event">${t('timeline.' + y)}</div>
+        </div>`).join('');
+    }
+
+    function renderDateBody() {
+      const el = document.getElementById('date-body');
+      const keys = ['date.intro','date.cervantes','date.shakespeare1','date.shakespeare2','date.others','date.outro'];
+      el.innerHTML = keys.map(k => `<p>${t(k)}</p>`).join('');
+    }
+
+    function renderMeaningCards() {
+      const el = document.getElementById('meaning-cards');
+      const icons = ['📖','🌍','⚖️','🎓'];
+      const keys = ['c1','c2','c3','c4'];
+      el.innerHTML = keys.map((k, i) => `
+        <div class="card">
+          <div class="card-icon">${icons[i]}</div>
+          <div class="card-title">${t('meaning.' + k + '.title')}</div>
+          <div class="card-text">${t('meaning.' + k + '.text')}</div>
+        </div>`).join('');
+    }
+
+    function renderFacts() {
+      const el = document.getElementById('facts-grid');
+      const numbers = ['100+', String(new Date().getFullYear() - 1995 + 1), '1995', '4/23'];
+      const keys = ['f1','f2','f3','f4'];
+      el.innerHTML = keys.map((k, i) => `
+        <div class="fact-item">
+          <div class="fact-number">${numbers[i]}</div>
+          <div class="fact-label">${t('facts.' + k)}</div>
+        </div>`).join('');
+    }
+
+    function renderFooter() {
+      const n = new Date().getFullYear() - 1995 + 1;
+      const line2 = t('footer.line2').replace('{n}', n);
+      document.querySelector('footer p:last-child').innerHTML = line2;
+    }
+
+    function switchLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('wbd-lang', lang);
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.id === 'btn-' + lang);
+      });
+
+      document.querySelector('html').lang = lang === 'zh' ? 'zh-CN' : 'en';
+      document.title = lang === 'zh'
+        ? '世界读书日 — 4月23日'
+        : 'World Book Day — April 23rd';
+
+      renderStatic();
+      renderStoryText();
+      renderQuote();
+      renderTimeline();
+      renderDateBody();
+      renderMeaningCards();
+      renderFacts();
+      renderFooter();
+
+      // Re-trigger reveal animations
+      document.querySelectorAll('.reveal').forEach(el => el.classList.remove('visible'));
+      setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) el.classList.add('visible');
+        });
+      }, 50);
+    }
+
+    document.getElementById('btn-zh').addEventListener('click', () => switchLang('zh'));
+    document.getElementById('btn-en').addEventListener('click', () => switchLang('en'));
 
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
@@ -639,6 +821,9 @@
       });
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
+
+    // Init
+    switchLang(currentLang);
   </script>
 </body>
 </html>
